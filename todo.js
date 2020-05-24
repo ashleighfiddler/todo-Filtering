@@ -66,8 +66,10 @@ const fetchTodos = () => {
       console.log(todoId);
 
       // create a lI if the user id = todoId 
+
       let todoList = document.getElementById('todo-list');
       let todoTitle = "";
+    
 
       for (i=0; i < arrayOfTodos.length; i++) {
 
@@ -75,16 +77,20 @@ const fetchTodos = () => {
 
         let todoItem = document.createElement("LI");
 
-        const result = arrayOfTodos.filter( ) 
+        const currentuseridlist = arrayOfTodos.filter(a => a.userId === "todoId");
 
-        console.log(result)
+        console.log(currentuseridlist);
 
-        
+        if (arrayOfTodos[i].userId == "todoId") {
 
+         return true;}
 
-    todoItem.appendChild(todoTitle);
+        todoItem.appendChild(todoTitle);
     
-    todoList.appendChild(todoItem);
-         
+        todoList.appendChild(todoItem);
+        }
+
+
+    console.log("I can't figure out the syntax for returning the list of objects with the user ID matching the input");     
    } 
-  }
+  
