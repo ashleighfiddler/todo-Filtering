@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <script src=todo.js> </script>
-    <title>ToDo List </title>
+    <script src="todo.js"> </script>
+    <title>ToDo List</title>
   </head>
     <body> 
+      <form>
+        <label for="todoId">User ID</label><br>
+        <input type="number" id="userid" name="userid" placeholder="Enter User ID (1-10)" min="1" max ="10" value="" onmouseup="saveUserId(this.value)" autocomplete="off" ><br>
+      </form>
 
         <button onclick="fetchTodos()">Fetch Todos</button>
         <button onclick="logTodos()">Log Todos</button>
         <button onclick="populateTodos()">Populate Todos</button>
+        <button onclick="repopulateWids()"> Filter By User ID</button>
+
         <ol id="todo-list">
            
         </ol>
