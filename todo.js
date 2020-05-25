@@ -32,7 +32,7 @@ const fetchTodos = () => {
 
     let todoList = document.getElementById('todo-list');
     let todoTitle = "";
-    let todoComplete = "";
+  
 
     for (i=0; i < arrayOfTodos.length; i++) {
         todoTitle = document.createTextNode(arrayOfTodos[i].title);
@@ -69,28 +69,87 @@ const fetchTodos = () => {
 
       let todoList = document.getElementById('todo-list');
       let todoTitle = "";
-    
+      const currentuseridlist = arrayOfTodos.filter(a => a.userId == todoId);
 
-      for (i=0; i < arrayOfTodos.length; i++) {
+      console.log(currentuseridlist);
 
-        todoTitle = document.createTextNode(arrayOfTodos[i].title);
+      for (i=0; i < currentuseridlist.length; i++) {
+
+        todoTitle = document.createTextNode(currentuseridlist[i].title);
 
         let todoItem = document.createElement("LI");
 
-        const currentuseridlist = arrayOfTodos.filter(a => a.userId === "todoId");
+      //   const currentuseridlist = arrayOfTodos.filter(a => a.userId == todoId);
 
-        console.log(currentuseridlist);
+      //   console.log(currentuseridlist);
 
-        if (arrayOfTodos[i].userId == "todoId") {
+        todoItem.appendChild(todoTitle);
+    
+        todoList.appendChild(todoItem);
+        }
+        console.log("I can't figure out the syntax for returning the list of objects with the user ID matching the input");     
+        alert("I FIGURED IT OUT!");
+  } 
+  
+   
 
-         return true;}
+const showComplete = () => {
+  const items = document.getElementsByTagName("ol");
+  for (i=0; i < items.length; i++) {
+    items[i].innerHTML = null; 
+       }   
+       console.log("what");
+      
+  // console.log("what")
+      let todoList = document.getElementById('todo-list');
+      let todoTitle = "";
+      const completedTrue = arrayOfTodos.filter(a => a.completed == true);
+
+      console.log(completedTrue);
+
+      for (i=0; i < completedTrue.length; i++) {
+
+        todoTitle = document.createTextNode(completedTrue[i].title);
+
+        let todoItem = document.createElement("LI");
+
+      //   const currentuseridlist = arrayOfTodos.filter(a => a.userId == todoId);
+
+      //   console.log(currentuseridlist);
 
         todoItem.appendChild(todoTitle);
     
         todoList.appendChild(todoItem);
         }
 
+}
+const showIncomplete = () => {
+  const items = document.getElementsByTagName("ol");
+  for (i=0; i < items.length; i++) {
+    items[i].innerHTML = null; 
+       }   
+       console.log("what");
+      
+  // console.log("what")
+      let todoList = document.getElementById('todo-list');
+      let todoTitle = "";
+      const completedFalse = arrayOfTodos.filter(a => a.completed == false);
 
-    console.log("I can't figure out the syntax for returning the list of objects with the user ID matching the input");     
-   } 
-  
+      console.log(completedFalse);
+
+      for (i=0; i < completedFalse.length; i++) {
+
+        todoTitle = document.createTextNode(completedFalse[i].title);
+
+        let todoItem = document.createElement("LI");
+
+      //   const currentuseridlist = arrayOfTodos.filter(a => a.userId == todoId);
+
+      //   console.log(currentuseridlist);
+
+        todoItem.appendChild(todoTitle);
+    
+        todoList.appendChild(todoItem);
+        }
+
+}

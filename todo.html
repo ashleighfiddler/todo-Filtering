@@ -10,15 +10,16 @@
   </head>
     <body> 
       <form>
-        <label for="todoId">User ID</label><br>
-        <input type="number" id="userid" name="userid" placeholder="Enter User ID (1-10)" min="1" max ="10" value="" onmouseup="saveUserId(this.value)" autocomplete="off" ><br>
+        <label for="todoId">Select User ID (1-10)</label><br>
+        <input type="number" id="userid" name="userid" placeholder=" (1-10)" min="1" max ="10" value="" onmouseup="saveUserId(this.value)" autocomplete="off" ><br>
       </form>
 
         <button onclick="fetchTodos()">Fetch Todos</button>
         <button onclick="logTodos()">Log Todos</button>
         <button onclick="populateTodos()">Populate Todos</button>
         <button onclick="repopulateWids()"> Filter By User ID</button>
-
+        <button onclick="showComplete()">Show Completed Tasks</button>
+        <button onclick="showIncomplete()">Show Incomplete Tasks</button>
         <ol id="todo-list">
            
         </ol>
